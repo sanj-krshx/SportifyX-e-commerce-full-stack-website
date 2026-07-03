@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from db import connection
+from db import reconnect
 from schemas import CartItem
 import pymysql
 
@@ -8,6 +8,8 @@ router = APIRouter()
 
 @router.post("/cart/add")
 def add_to_cart(item: CartItem):
+
+    connection = reconnect()
 
     cursor = connection.cursor(
         pymysql.cursors.DictCursor
@@ -72,6 +74,8 @@ def add_to_cart(item: CartItem):
 @router.get("/cart/{user_id}")
 def get_cart(user_id: int):
 
+    connection = reconnect()
+
     cursor = connection.cursor(
         pymysql.cursors.DictCursor
     )
@@ -81,16 +85,10 @@ def get_cart(user_id: int):
         SELECT
 
         cart.id,
-        products.name,
-        products.price,
-        products.image,
+        cart.product_id,
         cart.quantity
 
         FROM cart
-
-        JOIN products
-
-        ON cart.product_id = products.id
 
         WHERE cart.user_id=%s
         """,
@@ -104,6 +102,8 @@ def get_cart(user_id: int):
 
 @router.delete("/cart/remove/{cart_id}")
 def remove_cart_item(cart_id: int):
+
+    connection = reconnect()
 
     cursor = connection.cursor()
 

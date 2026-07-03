@@ -1,78 +1,110 @@
-Sports E-Commerce Website
+# SportifyX E-Commerce Full Stack Website
 
-A full-stack Sports E-Commerce web application built using React.js, FastAPI, and MySQL. This project provides a modern online shopping platform for sports products with separate admin and user functionalities.
+SportifyX is a sports e-commerce project built with React, FastAPI, and MySQL. It includes a customer storefront, sport-wise product pages, login/signup, cart count, banner management, and an admin product dashboard.
 
-Features
+## Tech Stack
 
-User Features
+- Frontend: React + Vite
+- Backend: FastAPI
+- Database: MySQL
+- Language: JavaScript, Python
 
-* User Registration and Login
-* Product Search
-* Browse Sports Products
-* Shopping Cart
-* Responsive UI
-* Dark Mode Support
+## Requirements
 
-Admin Features
+Install these before running the project:
 
-* Admin Authentication
-* Product Management Dashboard
-* Add Products
-* Edit Products
-* Delete Products
-* Image Upload Support
-* Inventory Management
+- Node.js
+- Python 3
+- MySQL Server
 
-Categories
+## 1. Clone The Project
 
-* Football
-* Cricket
-* Basketball
-* Tennis
+```bash
+git clone https://github.com/sanj-krshx/SportifyX-e-commerce-full-stack-website.git
+cd SportifyX-e-commerce-full-stack-website
+```
 
-Tech Stack
+## 2. Set Up MySQL Database
 
-Frontend
+Start MySQL, then run:
 
-* React.js
-* Vite
-* HTML
-* CSS
-* JavaScript
+```bash
+mysql -u root -p < database_setup.sql
+```
 
-Backend
+The default database settings are:
 
-* FastAPI
-* Python
+- Database: `sports_ecommerce`
+- User: `root`
+- Password: `test1234`
 
-Database
+Default admin login:
 
-* MySQL
+- Username: `admin`
+- Password: `admin123`
 
-Project Structure
+To use different MySQL details, create `backend/.env` from the example:
 
-Frontend/
-├── React + Vite
-Backend/
-├── FastAPI
-├── APIs
-├── Database Connection
-├── Image Uploads
-Database/
-├── MySQL Tables
+```bash
+cp backend/.env.example backend/.env
+```
 
-Installation
+Then edit the values in `backend/.env`.
 
-Frontend
+## 3. Run Backend
 
-npm install
-npm run dev
+Open a terminal:
 
-Backend
-
+```bash
+cd backend
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 uvicorn main:app --reload
+```
 
-Author
+Backend runs at:
 
-Developed by [K Sanjay Krishna]
+```txt
+http://127.0.0.1:8000
+```
+
+## 4. Run Frontend
+
+Open another terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend usually runs at:
+
+```txt
+http://127.0.0.1:5173
+```
+
+## Useful Pages
+
+- Storefront: `http://127.0.0.1:5173`
+- Admin login: `http://127.0.0.1:5173/admin`
+- Admin dashboard: `http://127.0.0.1:5173/dashboard`
+
+## Features
+
+- Homepage with sport category cards
+- Football, Cricket, Basketball, Tennis, Volleyball product pages
+- Product search
+- User signup/login
+- Cart count
+- Admin login
+- Product add/edit/delete dashboard
+- Banner upload/delete
+- Responsive UI
+
+## Notes
+
+- Run the MySQL setup script before starting the backend.
+- Keep backend running while using the dashboard.
+- Uploaded images are stored in `backend/uploads`.
