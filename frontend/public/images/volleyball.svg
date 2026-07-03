@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" role="img" aria-labelledby="title desc">
+  <title id="title">Volleyball</title>
+  <desc id="desc">A volleyball on an indoor court background.</desc>
+  <rect width="900" height="650" fill="#eef2f7"/>
+  <rect y="420" width="900" height="230" fill="#dbeafe"/>
+  <path d="M0 462h900" stroke="#93c5fd" stroke-width="5"/>
+  <circle cx="450" cy="315" r="188" fill="#ffffff" stroke="#cbd5e1" stroke-width="10"/>
+  <path d="M450 127c-35 74-35 137 0 188s35 114 0 188" fill="none" stroke="#2563eb" stroke-width="18" stroke-linecap="round"/>
+  <path d="M288 222c87-10 153 12 198 66 43 52 99 80 168 84" fill="none" stroke="#22c55e" stroke-width="18" stroke-linecap="round"/>
+  <path d="M294 410c54-76 122-111 203-105 71 5 129-18 176-69" fill="none" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
+  <path d="M356 150c-29 62-19 119 30 171 47 51 60 108 39 172" fill="none" stroke="#cbd5e1" stroke-width="12" stroke-linecap="round"/>
+  <ellipse cx="450" cy="535" rx="190" ry="32" fill="#94a3b8" opacity="0.25"/>
+</svg>
